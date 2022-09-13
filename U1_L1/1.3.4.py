@@ -1,0 +1,7 @@
+name = input("name:")
+gender = input("gender:")
+id = input("id:")
+print("---- info ----")
+print("Name   :%6s" % name)
+print("Gender :%6s" % gender)
+print("ID     :%6s" % id)
