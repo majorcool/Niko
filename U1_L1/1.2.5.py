@@ -1,2 +1,2 @@
 stupid_price = 12149.05
-print((int) (67890 // stupid_price))
+print("剩下%.2f块钱" % (67890 % stupid_price))
