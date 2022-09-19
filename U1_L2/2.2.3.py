@@ -12,5 +12,5 @@ else:
         print("年轻人")
     if 18<=age<=64:
         print("成年人")
-    if age>65
+    if age>65:
         print("老年人")
