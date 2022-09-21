@@ -1,4 +1,4 @@
-score = input("stu scr:")
+score = int(input("stu scr:"))
 if score != 0:
     print("great!")
 else:
