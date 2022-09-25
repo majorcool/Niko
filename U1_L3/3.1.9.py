@@ -5,6 +5,7 @@ while i<x:
     if x % i == 0:
         flag = 1
         break
+    i += 1
 if flag:
     print("rubbish!")
 else:
