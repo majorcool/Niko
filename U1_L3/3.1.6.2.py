@@ -5,6 +5,5 @@ for i in range(30):
     while ( tmpscr > 100 or tmpscr < 0):
         print("error!")
         tmpscr = int(input("scr?"))
-    else:
-        totscr += tmpscr
+    totscr += tmpscr
 print("finished! avg=",totscr/30)
