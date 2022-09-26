@@ -1,7 +1,7 @@
 while True:
     x = float (input("x=?"))
     y = float (input("y=?"))
-    ope = input("ope=?")
+    ope = input("ope=?(+,-,*,/)")
     if ope == '+':
         print("res=",x+y)
     elif ope == '-':
