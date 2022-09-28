@@ -1,7 +1,7 @@
 def plunge_scr(ratings,difficulty):
     if len(ratings) != 7:
         return False
-    ratings_list = list(ratings)
+    ratings_list = list(ratings) # tuple?
     ratings_list.sort()
     ratings_list.pop(0)
     ratings_list.pop(0)
