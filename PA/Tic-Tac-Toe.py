@@ -91,8 +91,8 @@ while True:
     player_y = int(input("y=?[0,2],int"))
     while (not set_piece(player_x,player_y,player,step)):
         print("Player", player, " , Please input:")
-        player_x = int(input("x=?[0,3],int"))
-        player_y = int(input("y=?[0,3],int"))
+        player_x = int(input("x=?[0,2],int"))
+        player_y = int(input("y=?[0,2],int"))
     if alter:
         print("alter mode! step=",step)
         clear_overtime(step)
