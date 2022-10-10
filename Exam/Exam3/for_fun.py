@@ -19,6 +19,7 @@ def funfun(numlist):
     anslist = dedup(anslist)
     return anslist
 
+
 def max_multiply(numlist):
     max_mul = numlist[0] * numlist[1] * numlist[2]
     reslist = numlist[0:3]
