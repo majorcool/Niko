@@ -11,8 +11,8 @@ def dedup(original):
 def funfun(numlist):
     numlist.sort()
     anslist = []
-    for i in range(0, len(numlist)):
-        for j in range(i+1, len(numlist)):
+    for i in range(0, len(numlist)-2):
+        for j in range(i+1, len(numlist)-1):
             for k in range(j+1, len(numlist)):
                 if numlist[i] + numlist[j] + numlist[k] == 0:
                     anslist.append((numlist[i], numlist[j], numlist[k]))
