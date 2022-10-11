@@ -1,8 +1,12 @@
+import os
+
 board_h = 3
 board_w = 3
 board = []
 board_seq = []
 alter = False
+
+piece_to_be_deleted = (-1, -1)
 
 
 def display():
@@ -81,7 +85,28 @@ def clear_overtime(step):
             if board_seq[i][j] <= step - 6 and board_seq[i][j] != 0:
                 board[i][j] = 'N'
                 board_seq[i][j] = 0
-                print("i", i, "j", j, "cleared!")
+
+
+def about_to_be_deleted(step):
+    x = -1
+    y = -1
+    for i in range(board_h):
+        for j in range(board_w):
+            if board_seq[i][j] <= step - 5 and board_seq[i][j] != 0:
+                x = i
+                y = j
+    return (x, y)
+
+
+def ask_player():
+    player_input = input("")
+    while (not player_input.isnumeric()) or int(player_input) > 8 or int(player_input) < 0:
+        print("wrong input, you stupid! now input again")
+        player_input = input("")
+
+    in_x = int(player_input) // 3
+    in_y = int(player_input) % 3
+    return (in_x, in_y)
 
 
 init_board()
@@ -93,21 +118,33 @@ if alter_temp == 'Y' or alter_temp == 'y':
 player = 'A'
 step = 1
 while True:
+    os.system("clear")
+    if not piece_to_be_deleted == (-1, -1):
+        print("piece row=", piece_to_be_deleted[0], " col=", piece_to_be_deleted[1], " is going to be deleted")
+
     display()
-    print("Player", player, " , Please input:")
-    player_x = int(input("x=?[0,2],int"))
-    player_y = int(input("y=?[0,2],int"))
-    while not set_piece(player_x, player_y, player, step):
-        print("Player", player, " , Please input:")
-        player_x = int(input("x=?[0,2],int"))
-        player_y = int(input("y=?[0,2],int"))
+    print("Player", player, " , Please input: [0-8]")
+    player_choice = ask_player()
+    player_x = player_choice[0]
+    player_y = player_choice[1]
     if alter:
         print("alter mode! step=", step)
         clear_overtime(step)
+        piece_to_be_deleted = about_to_be_deleted(step)
+    while not set_piece(player_x, player_y, player, step):
+        player_choice = ask_player()
+        player_x = player_choice[0]
+        player_y = player_choice[1]
+
     step += 1
 
     if check_winner(player):
         print(player, " winned!")
+        print("\n\n clear bpard! \n\n")
+        init_board()
+        step = 1
+    elif step == 10 and not alter:
+        print("平局")
         print("\n\n clear bpard! \n\n")
         init_board()
         step = 1
