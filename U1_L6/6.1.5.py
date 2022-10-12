@@ -1,4 +1,4 @@
-eng_characters = "qwertyuiopasdfghjklzxcvbnm"
+eng_characters = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
 nums = "1234567890"
 
 
