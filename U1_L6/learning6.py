@@ -14,3 +14,5 @@ picasso = "巴勃罗·迭戈·何塞·弗朗西斯科·狄·保拉·胡安·纳�
 print(picasso)
 
 print(picasso[-3:-1]+picasso[-1])
+
+picasso.translate(picasso)

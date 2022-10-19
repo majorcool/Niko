@@ -41,4 +41,4 @@ def bignum_add (num1, num2):
     return result[:(len(result)-actualpoint)+1]+ '.' + result[(len(result)-actualpoint)+1:]
 
 
-print(bignum_add("11000.677","200.1"))
+print(bignum_add("11000.677","200.03"))

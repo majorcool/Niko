@@ -8,4 +8,4 @@ def str_revert(n, str='123456789'):
         answer += str[-(i+1)]
     return answer
 
-print(str_revert(3,'abcdefghi'))
+print(str_revert(3,'abcdefgh'))
