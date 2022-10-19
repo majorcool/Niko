@@ -13,9 +13,9 @@ def factorial (n):
         return 1
     return n * factorial(n-1)
 
-def fat_wave_nazi(f):
+def fat_wave_na(f):
     if f == 0 or f == 1:
         return f
-    return fat_wave_nazi(f-1) + fat_wave_nazi(f-2)
+    return fat_wave_na(f-1) + fat_wave_na(f-2)
 
-print(fat_wave_nazi(10))
+print(fat_wave_na(10))
