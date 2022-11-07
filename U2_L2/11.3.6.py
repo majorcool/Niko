@@ -39,7 +39,3 @@ class course:
         print("course", self.name, "is deleted")
 
 
-stu0 = Student()
-print(stu0)
-stu1 = Student("aa", 123)
-print(stu1)
