@@ -4,14 +4,17 @@ def is_vowel(x):
 
 # 没调好
 def reverse_vowels(s):
-    for i in range(len(s) // 2):
+    vow_list = []
+    for i in range(len(s)):
         if is_vowel(s[i]):
-            max_pos = max(s.rfind('a'), s.rfind('e'), s.rfind("o"), s.rfind("u"), s.rfind("i"))
-            if max_pos != -1 and max_pos > i:
-                tmp = s[max_pos]
-                s = s[:max_pos] + s[i] + s[max_pos:]
-                s = s[:i] + tmp + s[i:]
-    return s
+            vow_list.append(s[i])
+    result = ""
+    for i in s:
+        if is_vowel(i):
+            result += vow_list.pop()
+        else:
+            result += i
+    return result
 
 
 print(reverse_vowels("CoopEdu2022"))
