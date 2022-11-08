@@ -14,4 +14,3 @@ maaath = EasyMath()
 
 maaath.easy_add(1,2)
 maaath.easy_minus(2,3)
-maaath.__str__()
