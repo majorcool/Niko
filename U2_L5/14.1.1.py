@@ -3,7 +3,7 @@ class People:
         print('Ahhhh')
 
 
-class Infant:
+class Infant(People):
     def talk(self):
         return None
 #https://docs.python.org/3/library/exceptions.html#NotImplementedError
