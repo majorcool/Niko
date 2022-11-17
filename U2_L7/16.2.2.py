@@ -17,9 +17,8 @@ class Dealer:
         if self.__num < n:
             print("猜大了")
 
-    def check(self,n):
+    def check(self, n):
         return self.__num == n
-
 
     def award(self, rounds):
         return 10 - rounds + 1
@@ -30,12 +29,10 @@ class Player:
         self.point = 0
 
     def guesss_number(self):
-        return random.randint(0,100)
+        return random.randint(0, 100)
 
 
-def game():
-    dealer = Dealer()
-    player = Player()
+def game(dealer, player):
     dealer.set_number()
     res = -1
     rounds = 0
@@ -48,5 +45,8 @@ def game():
     print(rounds)
     return True
 
-while(game()):
+
+dealer = Dealer()
+player = Player()
+while (game(dealer.player)):
     pass

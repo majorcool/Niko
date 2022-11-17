@@ -40,6 +40,14 @@ class Player:
         return random.randint(n1, n2)
 
 
+class Rule:
+    def __init__(self):
+        self.rounds = 0
+
+    def judge(self, dealer, player, rounds):
+        player.point = dealer.award(rounds)
+
+
 def game(dealer, player):
     dealer.set_number()
     res = -1
@@ -51,9 +59,9 @@ def game(dealer, player):
         rounds += 1
         hint = dealer.hint(res)
         if hint == too_big:
-            n2 -= 1
+            n2 = res - 1
         if hint == too_small:
-            n1 += 1
+            n1 = res + 1
         # if dealer.award(rounds) < -10:
         # return False
     print(rounds)
