@@ -12,3 +12,4 @@ for i in range(len(raw_str)):
         numlist.append(int(raw_str[i]))
 numlist.sort()
 print(numlist)
+f.close()

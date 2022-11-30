@@ -4,3 +4,5 @@ char = original_f.readline()
 while char != "":
     output_f.write(char)
     char = original_f.readline()
+original_f.close()
+output_f.close()

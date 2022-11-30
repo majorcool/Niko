@@ -10,3 +10,5 @@ while char != "":
     output_f.write(char)
     print(char)
     char = original_f.read(1)
+original_f.close()
+output_f.close()
