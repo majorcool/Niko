@@ -4,11 +4,9 @@ def can_place_flowers(pots, n):
     if pots[len(pots) - 1] == 0:
         pots = pots + [0]
     zero_sections = []
-    temp_start = 0
     temp_len = 0
     for i in range(0,len(pots)):
         if pots[i] == 1:
-            temp_start = i
             if temp_len != 0:
                 zero_sections.append(temp_len)
             temp_len = 0
