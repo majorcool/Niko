@@ -1,3 +1,4 @@
+from User import User
 class Teacher(User):
     pass
 

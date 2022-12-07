@@ -1,3 +1,4 @@
+from User import User
 class User:
     auth_file_loc = ""
 

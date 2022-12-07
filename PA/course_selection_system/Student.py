@@ -1,3 +1,4 @@
+from User import User
 class Student(User):
     def view_scr_reqirements(self):
         pass
