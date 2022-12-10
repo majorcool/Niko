@@ -14,11 +14,14 @@ class Mediator:
             course.stu_list.remove(i)
 
     @staticmethod
-    def new_student(num):
-        stulist = []
-        for i in range(num):
-            stulist.append(Student())
-        return stulist
+    def new_student(name):
+        return Student(name)
+
+    @staticmethod
+    def kick_student(stu, course, teachername):
+        if course.teacher != teachername:
+            raise Exception
+        
 
     @staticmethod
     def choose_course(stu, course):

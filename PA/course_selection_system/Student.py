@@ -1,8 +1,8 @@
 from User import User
 from Mediator import Mediator
 class Student(User):
-    def __init__(self):
-        super.__init__()
+    def __init__(self, name):
+        super().__init__(name)
         self.courses = []
     def view_scr_reqirements(self):
         pass

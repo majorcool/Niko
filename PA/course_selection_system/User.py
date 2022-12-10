@@ -11,12 +11,11 @@ class PasswordError(Exception):
 class User:
     auth_file_loc = ""
 
-    def __init__(self):
+    def __init__(self, username):
         f = open(User.auth_file_loc, "a+")
-
-        username = ""
-        password = ""
-        f.write(username + ' ' + password + '\n')
+        self.username = username
+        self.password = "password"
+        f.write(username + ' ' + self.password + '\n')
         f.close()
         self.file = open(username, "w")
         self.file.close()
