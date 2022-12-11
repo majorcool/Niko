@@ -1,7 +1,3 @@
-from Course import Course
-from User import *
-from Teacher import *
-from Student import Student
 
 class Mediator:
     @staticmethod
@@ -13,15 +9,14 @@ class Mediator:
         for i in stus:
             course.stu_list.remove(i)
 
-    @staticmethod
-    def new_student(name):
-        return Student(name)
 
     @staticmethod
     def kick_student(stu, course, teachername):
         if course.teacher != teachername:
             raise Exception
-        
+        if not stu in course.stu_list:
+            raise Exception
+        course.stu_list.remove(stu)
 
     @staticmethod
     def choose_course(stu, course):
