@@ -33,3 +33,5 @@ if userinfo[0] == "Student":
     user = Student(userinfo[1])
 
 print(user)
+if user is Student:
+    user.view_course()
