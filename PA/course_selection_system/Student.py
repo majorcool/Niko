@@ -3,8 +3,8 @@ from Mediator import Mediator
 class Student(User):
     def __init__(self, name):
         super().__init__(name, "Student")
-
-        self.courses = []
+        f = open(name, "r")
+        self.courses = f.readlines()[2]
     def view_scr_reqirements(self):
         pass
 

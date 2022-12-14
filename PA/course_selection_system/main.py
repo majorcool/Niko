@@ -1,5 +1,7 @@
 
 from User import User
+from User import UsernameNotFound
+from User import PasswordError
 from Course import Course
 from Teacher import Teacher, Admin_teacher
 from Student import Student
@@ -21,10 +23,13 @@ def login():
             break
     type = User.get_usertype(username)
     print(type)
+    return (type, username)
 
 
 
+user = None
+userinfo = login()
+if userinfo[0] == "Student":
+    user = Student(userinfo[1])
 
-randomstudent = Student("Niko")
-
-
+print(user)

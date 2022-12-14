@@ -19,9 +19,10 @@ class User:
             f.write(username + ' ' + self.password + '\n')
             f.close()
 
-        userfile = open(username, "rw")
-        print(userfile.readline().find("usertype"))
-        if userfile.readline().find("usertype") == -1:
+        userfile = open(username, "w")
+        userfile_r = open(username, "r")
+        print(userfile_r.readline().find("usertype"))
+        if userfile_r.readline().find("usertype") == -1:
             print("usertype not found, writing")
             userfile.write("usertype: " + usertype + "\n")
 
