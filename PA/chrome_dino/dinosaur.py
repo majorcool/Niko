@@ -56,13 +56,16 @@ class Dinosaur(pygame.sprite.Sprite):
             self.refresh_counter += 1
 
         if self.status.find('jump') != -1:
-            if self.jump_time >= 20:
+
+            if self.jump_time >= 40:
                 self.status = "run_1"
                 self.jump_time = 0
             if self.jump_time < 20:
-                self.rect.bottom += speed
-            else:
                 self.rect.bottom -= speed
+
+            else:
+                self.rect.bottom += speed
+            self.jump_time += 1
             self.refresh()
 
         if self.status == 'duck':
