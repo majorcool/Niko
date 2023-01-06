@@ -1,6 +1,8 @@
 import pygame
 
 speed = 10
+
+
 # gravity
 
 
@@ -14,9 +16,10 @@ class Dinosaur(pygame.sprite.Sprite):
         self.mask = pygame.mask.from_surface(self.image)
         self.status = "run_1"
         self.jump_time = 0
-
+        self.ground_pos = y_pos
         self.refresh_rate = 5
         self.refresh_counter = 0
+        self.is_alive = True
         pass
 
     def jump(self):
@@ -33,29 +36,38 @@ class Dinosaur(pygame.sprite.Sprite):
 
     def die(self):
         self.status = "die_1"
+        self.kill()
+        self.is_alive = False
         pass
+
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
 
     def refresh(self):
+        if not self.is_alive:
+            self.image = self.images.get("die_1")
+            return
         if self.status == "jump":  # only show one picture when dino jump
             self.image = self.images.get(self.status)
             pass
-        elif self.image == self.images.get(self.status): # always use string ending with "_1" as self.status
-            self.image = self.images.get(self.status.replace("1", "2")) # swap pictures to create animation
-        else: # "_2"
+        elif self.image == self.images.get(self.status):  # always use string ending with "_1" as self.status
+            self.image = self.images.get(self.status.replace("1", "2"))  # swap pictures to create animation
+        else:  # "_2"
             self.image = self.images.get(self.status.replace("2", "1"))
         self.mask = pygame.mask.from_surface(self.image)
 
     def update(self):
-        if self.status.find("run") != -1:
+        if not self.is_alive:
+            self.refresh()
+            return
+        if self.status.find("run") != -1 or self.status.find("duck") != -1:
             if self.refresh_counter == self.refresh_rate:
                 self.refresh()
                 self.refresh_counter = 0
             self.refresh_counter += 1
 
-        if self.status.find('jump') != -1:
+        if self.status.find('jump') != -1 or self.rect.bottom != self.ground_pos:
 
             if self.jump_time >= 40:
                 self.status = "run_1"

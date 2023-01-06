@@ -13,7 +13,27 @@ class Obstacle(pygame.sprite.Sprite):
 
 
 class Cactus(Obstacle):
-    pass
+    def __init__(self, images, position, cac_type):
+        pygame.sprite.Sprite.__init__(self)
+
+        self.images = images
+        self.image = self.images[cac_type - 1] # matching provided index, cac_type starts from 1
+        self.rect = self.image.get_rect()
+        self.rect.left, self.rect.bottom = position
+        self.mask = pygame.mask.from_surface(self.image)  # for collide detection
+
+        self.speed = -10
+
+    def refresh(self):
+        pass
+
+    def update(self):
+        self.rect.left += self.speed
+        if self.rect.right < 0:
+            self.kill()
+
+    def draw(self, screen):
+        screen.blit(self.image, self.rect)
 
 
 class Pterodactyl(Obstacle):
