@@ -38,4 +38,17 @@ C_IMG = [
     pygame.image.load(C_IMG_header + "cactus-6.png")
 ]
 
+S_IMG_header = "resources/images/scoreboard/scoreboard-"
+S_IMG = [
+    pygame.image.load(S_IMG_header + "0.png"),
+    pygame.image.load(S_IMG_header + "1.png"),
+    pygame.image.load(S_IMG_header + "2.png"),
+    pygame.image.load(S_IMG_header + "3.png"),
+    pygame.image.load(S_IMG_header + "4.png"),
+    pygame.image.load(S_IMG_header + "5.png"),
+    pygame.image.load(S_IMG_header + "6.png"),
+    pygame.image.load(S_IMG_header + "7.png"),
+    pygame.image.load(S_IMG_header + "8.png"),
+    pygame.image.load(S_IMG_header + "9.png")
+]
 GROUND_LVL = 200

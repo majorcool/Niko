@@ -3,6 +3,7 @@ import pygame
 
 class Obstacle(pygame.sprite.Sprite):
     def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
         pass
 
     def draw(self, screen):

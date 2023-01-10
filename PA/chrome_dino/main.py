@@ -18,6 +18,8 @@ din = Dinosaur(D_IMG, 0.2 * SCREENSIZE[0], GROUND_LVL)
 ptes = []
 cacs = []
 
+#scr = Scoreboard(S_IMG, (0,0))
+
 while True:
 
     for event in pygame.event.get():
@@ -50,6 +52,8 @@ while True:
 
     ground.update()
     ground.draw(screen)
+   # scr.update()
+    #scr.draw(screen)
 
     if random.randint(0,300) == 0: # about once every 300 frames
         ptes.append(Pterodactyl(P_IMG, (SCREENSIZE[0], random.randint(PTES_BOTTOM, PTES_TOP))))
@@ -64,5 +68,6 @@ while True:
     din.update()
     din.draw(screen)
 
+    #scr.score = ground.displacement // 50
     pygame.display.update()
     clock.tick(FPS)
